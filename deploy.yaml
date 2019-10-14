@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: position-simulator
-  namespace: fleetman
+  namespace: default
 spec:
   selector:
     matchLabels:
@@ -19,6 +19,5 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
-        imagePullPolicy: Never
 ---
 # No service for this microservice - it's "headless", it just sends out data and nothing calls it.
